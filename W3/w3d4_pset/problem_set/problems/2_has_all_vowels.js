@@ -13,16 +13,14 @@ hasAllVowels('hello world'); // => false
 
 function hasAllVowels(str) {
 
-    let vowels = 'aeiou'.split('');
+    let vowels = 'aeiou';
 
-    for(let i = 0; i < str.length; i++){
-        let words = str[i];
-        console.log(words)
-        if(vowels.includes(words)){
-            return true;
+    for(let i = 0; i < vowels.length; i++){ // looping thru the vowels
+        if(str.indexOf(vowels[i]) === - 1){ // test if str contains any vowels 
+            return false; 
         }
     }
-    return false; 
+    return true;
 }
 
 console.log(hasAllVowels('have you gone biking?'));
