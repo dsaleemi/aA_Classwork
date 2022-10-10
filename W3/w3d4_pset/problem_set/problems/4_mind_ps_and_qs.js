@@ -27,24 +27,28 @@ function mindPsAndQs(word){
     let longestStreak = 0;
     let currentStreak = 0;
 
-    for(let i = 0; i < word.length; i++){
-        let char = word[i];
+    for(let i = 0; i < word.length; i++){ // loop thru the word 
+        let char = word[i]; // grabbing the letters of the word
 
-        if(char === "P" || char === "Q"){
-            currentStreak += 1;
-        } else if (currentStreak > longestStreak){
+        if(char === "P" || char === "Q"){ // if the letters equal to p or q 
+            currentStreak += 1; // add 1 to the current streak 
+
+        } else if (currentStreak > longestStreak){ // if it turns out false... 
             longestStreak = currentStreak;
+
         } else {
             currentStreak = 0;
         }
 
-        if(i === str.length - 1 && currentStreak > longestStreak){
-            longestStreak = currentStreak;
+        if(i === word.length - 1 && currentStreak > longestStreak){ // if the last index is larger than the longestStreak
+            longestStreak = currentStreak; // initialize the longestest streak to current 
         }
     }
     return longestStreak;
 }
 
+
+console.log(mindPsAndQs('APCDQQPPC'))
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

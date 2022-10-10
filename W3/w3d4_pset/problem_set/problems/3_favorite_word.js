@@ -23,40 +23,37 @@ function countWords(letter, word){ // set a helper func
     return count;                       
 }
 
-function favoriteWord(favoriteLetter, sentence){
-    let words = sentence.split(' ');  //breaking the sentence
-    let fav = " ";
+// function favoriteWord(favoriteLetter, sentence){
+//     let words = sentence.split(' ');  //breaking the sentence
+//     let fav = "";
 
 
-    for(let i = 0; i < words.length; i++){  // looping thru words from sent
-       let word = words[i]; // grabbing individual word
-       if(countWords(favoriteLetter, word) > countWords(favoriteLetter, fav)){ // applying the func... SETTING PARAMETERS DIFF!!
-        fav = word;
-       }
-    }
-    return fav; 
-}
-
-
-
-
-
-
-
-//***************/
-// function favoriteWord(favoriteLetter, sentence) {
-
-//     let words = sentence.split(' ');
-//     let newSen = [];
-
-//     for(let i = 0; i < words.length; i++){
-//         let char = words[i];
-//     if (char.indexOf(favoriteLetter) > - 1) {
-//         newSen.push(char);
-//         } 
+//     for(let i = 0; i < words.length; i++){  // looping thru words from sent
+//        let word = words[i]; // grabbing individual word
+//        if(countWords(favoriteLetter, word) > countWords(favoriteLetter, fav)){ // applying the func... SETTING PARAMETERS DIFF!!
+//         fav = word;
+//        }
 //     }
-//     return newSen.join('');
+//     return fav; 
 // }
+
+
+//********another way of solving it*******/
+function favoriteWord(favoriteLetter, sentence) {
+
+    let words = sentence.split(' ');
+    let favWord = ''
+    let max = 0;
+
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        let current = countWords(favoriteLetter, word);
+        if (current > max) {
+            favWord = word;
+        } 
+    }
+    return favWord;
+}
 
 
 console.log(favoriteWord('p', 'sinful caesar sipped his snifter'))
