@@ -11,17 +11,6 @@ sillyCipher("apple", { a : "c", p : "x"}) //=> 'cxx..'
 sillyCipher("bootcamp prep?", { o : "e", p : "q" , "?" : "!"}) //=> '.ee....q.q..q!'
 sillyCipher("twmce", { m : "n", t : "d", w : "a"}) //=> 'dan..''
 *******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
 function sillyCipher(sentence, cipher){
 
   let newWord = ' ';                                  // setting empty string
